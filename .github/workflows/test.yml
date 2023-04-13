@@ -1,0 +1,23 @@
+name: Test workflow
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: Test
+        required: true
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - name: check user permission
+      uses: 74th/workflow-permission-action@1.0.0
+      with:
+        users: parash-namespace
+
+    - uses: actions/checkout@v2
+
+    - name: Echo Done
+      run: echo "DONE"
