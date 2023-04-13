@@ -15,7 +15,7 @@ jobs:
     - name: check user permission
       uses: 74th/workflow-permission-action@1.0.0
       with:
-        users: parash-namespace
+        users: test
 
     - uses: actions/checkout@v2
 
